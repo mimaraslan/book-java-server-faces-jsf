@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head> 
+        <title>JSF Html Tag h:selectOneMenu</title>
+    </h:head>
+    <h:body>
+        <h1>JSF Html Tag h:selectOneMenu</h1>
+        <h:form>
+
+             1. h:selectOneMenu içindekileri kendimiz elimiz ile doldurduk.<br/> 
+            <h:selectOneMenu value="#{yb.secenek1}">
+                <f:selectItem itemValue="Saltanatı: 1389-1402" 
+                              itemLabel="Yıldırım Beyazıt Han Hazretleri" />
+                
+                <f:selectItem itemValue="Saltanatı: 1451-1481" 
+                              itemLabel="Fatih Sultan Mehmet Han Hazretleri" />
+                
+                <f:selectItem itemValue="Saltanatı: 1512-1520" 
+                              itemLabel="Yavuz Sultan Selim Han Hazretleri" />
+                
+                <f:selectItem itemValue="Saltanatı: 1520-1566" 
+                              itemLabel="Kanuni Sultan Süleyman Han Hazretleri"/>
+                
+                <f:selectItem itemValue="Saltanatı: 1876-1908" 
+       itemLabel="Ulu Hakan Cennet Mekân Sultan II. Abdülhamid Han Hazretleri"/>
+            </h:selectOneMenu>
+            <br /><br />
+
+            2. h:selectOneMenu içini Map Haritalama ile doldurduk.<br/>
+            <h:selectOneMenu value="#{yb.secenek2}">
+               
+                <f:selectItems value="#{yb.secenek2DegerleriniAl}" />
+                
+            </h:selectOneMenu>
+
+            <br /><br />
+
+            3. h:selectOneMenu içini bir sınıf ve nesne ile doldurduk.<br/>
+            <h:selectOneMenu value="#{yb.secenek3}">
+               
+                <f:selectItems value="#{yb.secenek3DegerleriniAl}" 
+                               var="s"
+                               itemLabel="#{s.sultanAdi}" 
+                               itemValue="#{s.saltanatSuresi}" />
+                
+            </h:selectOneMenu>
+
+            <br /><br />
+
+            <h:commandButton value="Temizle" type="reset" />
+            <h:commandButton value="Gönder" action="sayfa2" />
+
+        </h:form>
+    </h:body>
+</html>
+
