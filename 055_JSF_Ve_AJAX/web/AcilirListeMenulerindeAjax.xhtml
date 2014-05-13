@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>f:ajax</title>
+    </h:head>
+    <h:body> 
+        <h2>JSF ile AJAX  
+            <hr/>f:ajax</h2>
+<h:form>
+    FİRMALAR :
+ <h:selectOneMenu value="#{marketBean.firma_adi}" 
+                  style="width:220px">
+      <f:selectItems value="#{marketBean.firma}" />
+      <f:ajax event="change" render="urun" 
+              listener="#{marketBean.setUrun}"/>
+ </h:selectOneMenu><br></br><br></br>
+
+    ÜRÜNLER :
+<h:selectOneMenu value="#{marketBean.urun_no}" id="urun" 
+                 style="width: 220px;">
+      <f:selectItems value="#{marketBean.urun}"/>
+ </h:selectOneMenu>
+</h:form>
+    </h:body>
+</html>
+ 

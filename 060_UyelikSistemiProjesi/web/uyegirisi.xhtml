@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Üye Girişi</title>
+    </h:head>
+    <h:body>
+  
+        <h:outputStylesheet library="css" name="style.css" />
+         
+        <style>
+           div { background:#E0ECF8;
+           font-weight:bold;
+           font-size:16px; }
+        </style>
+        
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+<script>
+$(document).ready(function() {
+ 
+   $("#yenikayitpaneli").hide(); 
+  
+   $('a#uyegirisiID').click(function() {
+   $('#uyegirispaneli').animate({"height": "show"}, { duration: 1000 });
+   $("#yenikayitpaneli").animate({"height": "hide"}, { duration: 1000 });
+    return false;
+  }); 
+
+
+   $('a#yeniuyekaydiID').click(function() {
+   $("#uyegirispaneli").animate({"height": "hide"}, { duration: 1000 });
+   $('#yenikayitpaneli').animate({"height": "show"}, { duration: 1000 });	
+    return false;
+  });
+ 
+ });
+</script>
+ 
+<div id="uyegirispaneli">
+        <h:outputLabel value="Üye Girişi"/>  
+        <h:form>
+            <h:graphicImage library="images" height="60" width="60" 
+                            name="giris.png" />
+    <h:panelGrid columns="3">
+
+        <h:outputLabel value="Kullanıcı Adı :"/> 
+        <h:inputText id="uyekullaniciadiID" 
+                     value="#{ub.uyekullaniciadi}" 
+                     label="KULLANICI ADI ALANINI BOŞ GEÇEMEZSİNİZ!" 
+                     size="30" required="true" 
+                     styleClass="mavi_cerceve_ciz" />
+        <h:message for="uyekullaniciadiID" styleClass="hata_mesaj"/>
+
+        <h:outputLabel value="Parola : "> </h:outputLabel>  
+        <h:inputSecret id="uyeparolaID" 
+                       value="#{ub.uyeparola}"  
+                       label="PAROLA ALANINI BOŞ GEÇEMEZSİNİZ!"
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="uyeparolaID" styleClass="hata_mesaj"/>
+
+        <h:inputHidden></h:inputHidden> 
+        <h:commandButton value="Giriş Yap" type="submit" 
+                         action="#{ub.uyeGirisiniDenetle}"/>       
+    </h:panelGrid>
+   </h:form>   
+</div>
+ 
+
+
+<div id="yenikayitpaneli">
+  <h:outputLabel value="Yeni Üye Kayıdı"/> 
+    
+     <h:form>
+            <h:graphicImage library="images" height="60" width="60" 
+                            name="kayitol.png" />
+
+    <h:panelGrid columns="3">
+        <h:outputLabel value="Kullanıcı Adı :"/> 
+        <h:inputText   id="yeniuyekullaniciadiID" 
+                       value="#{ub.yeniuyekullaniciadi}" 
+                       label="KULLANICI ADI ALANINI BOŞ GEÇEMEZSİNİZ!" 
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="yeniuyekullaniciadiID" styleClass="hata_mesaj"/>
+
+        <h:outputLabel value="Parola : "></h:outputLabel>  
+        <h:inputSecret id="yeniuyeparolaID" 
+                       value="#{ub.yeniuyeparola}"  
+                       label="PAROLA ALANINI BOŞ GEÇEMEZSİNİZ!"
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="yeniuyeparolaID" styleClass="hata_mesaj"/>
+              
+        <h:outputLabel value="E-Posta : "></h:outputLabel>  
+        <h:inputText   id="yeniuyeepostaID" 
+                       value="#{ub.yeniuyeeposta}"  
+                       label="E-POSTA ALANINI BOŞ GEÇEMEZSİNİZ!"
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="yeniuyeepostaID" styleClass="hata_mesaj"/>
+        
+        
+        <h:inputHidden></h:inputHidden> 
+        <h:commandButton value="Kaydı Tamamla" type="submit" 
+                         action="#{ub.uyeKayidiniDenetle}"/>   
+    </h:panelGrid>
+   </h:form>  
+</div> 
+  
+  
+  <a id="yeniuyekaydiID">
+          <h:graphicImage library="images" height="40" width="40" 
+                            name="kayitol.png" /> 
+          Yeni Üye Kaydı</a>
+  
+ <a id="uyegirisiID">
+          <h:graphicImage library="images" height="40" width="40" 
+                            name="giris.png" /> 
+          Üye Girişi</a>
+ 
+
+    </h:body>
+</html>
+
+ 
+
+
+
+
+

@@ -1,0 +1,60 @@
+.tablo-ust-kisim{
+    text-align:center;
+    background:none repeat scroll 0 0 #E8ECF7;
+    border-bottom:1px solid buttonface;   
+    border-top:1px solid buttonface;
+}
+
+.tablo-orta-kisim{
+    text-align:center;
+    background:none repeat scroll 0 0 #CCFFCC;
+    border-top:1px solid buttonface;
+}
+
+.tablo-alt-kisim{
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFCC;
+    border-top:1px solid buttonface;
+} 
+
+
+.kirmizi{
+    color:red;	
+}
+
+.mavi{
+    color:blue;	
+}
+
+.yesil{
+    color:green;	
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 18px;
+}
+
+
+#sayfa{
+	width: 800px;
+	margin: 0 auto;
+}
+
+#baslik-kisim{
+	width: 100%;
+	height:100%;
+	margin-bottom:10px;
+        border: 2px solid #000;
+}
+
+#orta-kisim{
+	width: 100%;
+	height:100%;
+	margin-right:10px;
+	margin-bottom:10px;
+	border: 2px solid #000;
+}
+
+#alt-kisim{
+	width: 100%;
+	height:100px;
+	border: 2px solid #000;
+}

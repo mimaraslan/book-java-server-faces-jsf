@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>PrimeFaces Klavyeler</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+
+            <p:panel header="Keyboard Demo">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Default Layout: " />
+                    <p:keyboard value="#{keyboardBean.value1}"/>
+
+                    <h:outputText value="Basic QWERTY: " />
+                    <p:keyboard value="#{keyboardBean.value2}"
+                                layout="qwertyBasic"/>
+
+                    <h:outputText value="Alphabetic Layout: " />
+                    <p:keyboard value="#{keyboardBean.value3}"
+                                layout="alphabetic"/>
+ 
+<h:outputText value="Custom Layout 1: " />
+<p:keyboard value="#{keyboardBean.value4}"
+            layout="custom"
+            layoutTemplate="Anıl-back,Erdoğan-clear,Editör-close"/>
+
+<h:outputText value="Custom Layout 2: " />
+<p:keyboard value="#{keyboardBean.value5}" 
+            layout="custom"
+            layoutTemplate="Gülbari-space-Yıldız-close,Qafqaz-shift,University-space-spacebar"/>
+ 
+ 
+                    <h:outputText value="Default Keypad: " />
+                    <p:keyboard value="#{keyboardBean.value6}" keypadOnly="true"/>
+
+                    <h:outputText value="Button Mode: " />
+                    <p:keyboard value="#{keyboardBean.value7}"
+                                showMode="button"  keypadOnly="true"/>
+
+<h:outputText value="Image Mode: " />
+<p:keyboard value="#{keyboardBean.value8}"
+            showMode="button" buttonImageOnly="true"
+            buttonImage="/images/keyboardpencil.png"
+            keypadOnly="true"/>
+
+                    <h:outputText value="Password Mode: " />
+                    <p:keyboard value="#{keyboardBean.value9}"
+                                password="true" keypadOnly="true"/>
+
+                </h:panelGrid>
+            </p:panel>
+
+            <p:commandButton value="Submit" update="display" oncomplete="dialog.show()"/>
+
+            <p:dialog widgetVar="dialog" showEffect="fade" hideEffect="fade" header="Values">
+                <h:panelGrid columns="2" id="display" cellpadding="5">
+                    <h:outputText value="Value1: " />
+                    <h:outputText value="#{keyboardBean.value1}" />
+
+                    <h:outputText value="Value2:" />
+                    <h:outputText value="#{keyboardBean.value2}" />
+
+                    <h:outputText value="Value3:" />
+                    <h:outputText value="#{keyboardBean.value3}" />
+
+                    <h:outputText value="Value4:" />
+                    <h:outputText value="#{keyboardBean.value4}" />
+
+                    <h:outputText value="Value5:" />
+                    <h:outputText value="#{keyboardBean.value5}" />
+
+                    <h:outputText value="Value6:" />
+                    <h:outputText value="#{keyboardBean.value6}" />
+
+                    <h:outputText value="Value7:" />
+                    <h:outputText value="#{keyboardBean.value7}" />
+
+                    <h:outputText value="Value8:" />
+                    <h:outputText value="#{keyboardBean.value8}" />
+
+                    <h:outputText value="Value9:" />
+                    <h:outputText value="#{keyboardBean.value9}" />
+                </h:panelGrid>
+            </p:dialog>
+
+        </h:form>
+
+    </h:body>
+</html>

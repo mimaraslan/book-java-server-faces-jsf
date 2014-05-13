@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>f:validateRegex</title>
+    </h:head>
+    <h:body>
+        <h2>Girilen string'in belirlenen formata göre denetimi 
+            <hr/>f:validateRegex</h2>
+
+        <h:form id="validateRegexFormID">
+            <!-- HATA MESAJI -->
+            <h:message for="validateRegexFormID:eposta" style="color:red" />
+
+            <h:panelGrid columns="2" cellpadding="2" cellspacing="2">
+
+                <h:outputLabel value="E-Posta : " />
+                <h:inputText id="eposta" value="#{yb.eposta}" required="true"
+                             validatorMessage="Geçersiz bir e-posta girildi." >
+                    <!-- BIZIM BELIRLEDIGIMIZ DENETIM FORMATI -->
+                    <f:validateRegex 
+                        pattern="^(([A-Za-z0-9]+_+)
+                        |([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)
+                        |([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)
+                        |(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$"/>         
+                </h:inputText>
+                <h:outputLabel value="" />
+                <h:commandButton value="Gönder" action="sonuc" />
+
+            </h:panelGrid>
+        </h:form>      
+    </h:body>
+</html>
+

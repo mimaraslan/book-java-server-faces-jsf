@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head> 
+        <title>JSF Html Tag h:outputText </title>
+    </h:head> 
+    <h:body>
+        <h1>Gelen değerler</h1>
+
+        Adı : <h:outputText value="#{yb.adi}" /><br/>
+        Soyadı : <h:outputText value="#{yb.soyadi}" /><br/>
+
+        Adı Soyadı : 
+        <h:outputText value="#{yb.adi} 
+                      #{yb.soyadi}" />
+
+        <ol>
+            <li class="gorunus">#{yb.mesaj}</li>
+            <li><h:outputText value="#{yb.mesaj}" /></li>
+        </ol>  
+        <hr/>
+        
+        <ol>
+            <li><h:outputText value="#{yb.htmlInputCheckboxKutusu}" /></li>
+            <li><h:outputText value="#{yb.htmlInputCheckboxKutusu}" 
+                              escape="false" /></li>
+        </ol> 
+        <hr/>
+        
+        <ol> 
+            <li><h:outputText value="#{yb.htmlInputRadioKutusu}" /></li>
+            <li><h:outputText value="#{yb.htmlInputRadioKutusu}" 
+                              escape="false" /></li>
+        </ol> 
+        <hr/>
+        
+        <ol>
+            <li><h:outputText value="#{yb.htmlInputYaziKutusu}" /></li>
+            <li><h:outputText value="#{yb.htmlInputYaziKutusu}" 
+                              escape="false" /></li>
+        </ol>
+
+    </h:body>
+</html>
+

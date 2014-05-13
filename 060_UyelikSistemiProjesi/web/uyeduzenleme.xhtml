@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <h:outputLabel value="Üye Kaydını Düzenle"/> 
+    </h:head>
+    <h:body>
+         
+      <h:outputStylesheet library="css" name="style.css" />
+      <h:graphicImage library="images" height="40" width="40"
+                      name="duzenle.png" />
+      
+     <h2>
+     <h:outputText class="renklendir" 
+                   value="#{ub.uyekullaniciadi}"/>
+     <h:outputLabel value=" mübarek bilgi düzenlemeye hoş geldin."/>
+                    <br/><h:outputLabel value="Hayırlısı olsun. İnşaAllah "/>
+     </h2>
+                  
+     <h:panelGrid columns="2">
+  
+            <h:outputLabel value="Kullanıcı ID :"></h:outputLabel>  
+            <h:outputText  class="metinkutusu" 
+                           value="#{ub.uyeid}"/>
+            
+            <h:outputLabel value="Kullanıcı Adı :"></h:outputLabel>  
+            <h:outputText  class="metinkutusu" 
+                           value="#{ub.uyekullaniciadi}"/>
+
+
+            <h:outputLabel value="Eski Parola : "/> 
+            <h:outputText  class="metinkutusu" 
+                           value="#{ub.uyeparola}"/>
+
+
+            <h:outputText value="Eski E-Posta : "> </h:outputText>  
+            <h:outputText class="metinkutusu" 
+                          value="#{ub.uyeeposta}"/>         
+      </h:panelGrid>
+                        
+<hr/><h:form>
+    <h:panelGrid columns="3">       
+        <h:outputLabel value="Kullanıcı Adı: "></h:outputLabel>  
+        <h:inputText   id="uyekullaniciadiID" 
+                       value="#{ub.uyekullaniciadi}"  
+                       label="KULLANICI ADI ALANINI BOŞ GEÇEMEZSİNİZ!"
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="uyekullaniciadiID" styleClass="hata_mesaj"/>
+
+        <h:outputLabel value="Yeni Parola : "></h:outputLabel>  
+        <h:inputText   id="yeniuyeparolaID" 
+                       value="#{ub.uyeparola}"  
+                       label="PAROLA ALANINI BOŞ GEÇEMEZSİNİZ!"
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="yeniuyeparolaID" styleClass="hata_mesaj"/>
+              
+        <h:outputLabel value="Yeni E-Posta : "></h:outputLabel>  
+        <h:inputText   id="yeniuyeepostaID" 
+                       value="#{ub.uyeeposta}"  
+                       label="E-POSTA ALANINI BOŞ GEÇEMEZSİNİZ!"
+                       size="30" required="true" 
+                       styleClass="mavi_cerceve_ciz" />
+        <h:message for="yeniuyeepostaID" styleClass="hata_mesaj"/>
+            
+        <h:inputHidden></h:inputHidden> 
+        <h:commandButton value="Düzenlemeyi Tamamla" type="submit" 
+                         action="#{ub.uyeDuzenlemeyiDenetle}"/>   
+    </h:panelGrid>
+   </h:form>
+        
+        
+    <h:form>    
+         <h:graphicImage library="images" height="40" width="40" 
+                        name="sil.png" />      
+         <h:commandLink value="Hesabımı Sil" 
+                        action="#{ub.uyeSilmeyiDenetle()}"/>  
+         
+        <h:graphicImage library="images" height="40" width="40" 
+                        name="cikis.png" />      
+         <h:commandLink value="Çıkış" 
+                        action="#{ub.uyeCikisiniDenetle()}"/>
+         
+         <h:graphicImage library="images" height="40" width="40" 
+                        name="duzenle.png" />       
+         <h:commandLink value="Düzenle" 
+                        action="uyeduzenleme?faces-redirect=true"/>
+
+         <h:graphicImage library="images" height="40" width="40" 
+                        name="tamam.png" />      
+         <h:commandLink value="Üye paneli" 
+                        action="uyegirisibasarili?faces-redirect=true"/>   
+      </h:form> 
+  </h:body>
+</html>
+

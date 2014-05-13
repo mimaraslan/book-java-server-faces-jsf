@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head> 
+        <title>JSF Html Tag h:outputFormat </title>
+    </h:head> 
+    <h:body>
+        <h1>Gelen değerler</h1>
+        <ol>
+            <li>
+                <h:outputFormat value="#{yb.selam}" >
+                    <f:param value="#{yb.adi} #{yb.soyadi}" />
+                </h:outputFormat>
+            </li>
+            <li> 
+                <h:outputFormat value="Güzel gören, {0} Güzel düşünen, {1} {2}">
+                    <f:param value="güzel düşünür." />
+                    <f:param value="hayatından lezzet alır."/>
+                    <f:param value="B.S.N."/>
+                </h:outputFormat>
+            </li>
+        </ol>
+    </h:body>
+</html>
+

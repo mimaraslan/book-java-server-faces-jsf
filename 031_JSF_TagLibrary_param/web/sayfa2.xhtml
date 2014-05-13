@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head> 
+        <title>JSF Core Tag f:param</title>
+    </h:head> 
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css" />
+
+        <h:panelGrid columns="2">
+            <h1>Gelen değerler</h1>
+            <h:graphicImage library="images" 
+                            name="onay.png" />
+        </h:panelGrid>
+
+        <h:panelGrid columns="2" styleClass="mavi">
+
+            <h3>
+                <h:outputFormat value="ADI SOYADI : {0} {1}   BÖLÜMÜ :  {2}">
+                    <f:param value="#{yb.adi}" />
+                    <f:param value="#{yb.soyadi}" />
+                    <f:param value="#{yb.bolumu}" />
+                </h:outputFormat>
+            </h3>
+        </h:panelGrid>
+        
+    </h:body>
+</html>
+

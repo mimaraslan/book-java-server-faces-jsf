@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+    <composite:interface>
+        <composite:attribute name="kullaniciAdiYaziEtiketiLabel" />
+        <composite:attribute name="kullaniciAdiDegeriValue" />
+
+        <composite:attribute name="adiSoyadiYaziEtiketiLabel" />
+        <composite:attribute name="adiSoyadiDegeriValue" />    
+
+        <composite:attribute name="epostaYaziEtiketiLabel" />
+        <composite:attribute name="epostaAdiDegeriValue" />
+
+        <composite:attribute name="parolaYaziEtiketiLabel" />
+        <composite:attribute name="parolaAdiDegeriValue" />
+
+        <composite:attribute name="kayitOnayYaziEtiketiLabel" />
+        <composite:attribute name="kayitOnayDugmeAction" 
+                             method-signature="java.lang.String action()" />
+    </composite:interface>
+
+
+    <composite:implementation>
+        <h:form>
+            <h:panelGrid columns="2" id="uyeKayitBilesenPaneli">
+                #{cc.attrs.kullaniciAdiYaziEtiketiLabel} : 
+                <h:inputText id="kullaniciAdi" 
+                             value="#{cc.attrs.kullaniciAdiDegeriValue}" />
+
+                #{cc.attrs.adiSoyadiYaziEtiketiLabel} : 
+                <h:inputText id="adiSoyadi" 
+                             value="#{cc.attrs.adiSoyadiDegeriValue}" />
+
+                #{cc.attrs.epostaYaziEtiketiLabel} : 
+                <h:inputText id="eposta" 
+                             value="#{cc.attrs.epostaAdiDegeriValue}" />
+
+                #{cc.attrs.parolaYaziEtiketiLabel} : 
+                <h:inputText id="parola" 
+                             value="#{cc.attrs.parolaAdiDegeriValue}" />     
+
+                <h:outputText></h:outputText>                  
+                <h:commandButton action="#{cc.attrs.kayitOnayDugmeAction}" 
+                                 value="#{cc.attrs.kayitOnayYaziEtiketiLabel}"/>
+            </h:panelGrid>
+
+            <h:message for="uyeKayitBilesenPaneli" style="color:red;" />
+        </h:form>
+    </composite:implementation>
+
+</html>

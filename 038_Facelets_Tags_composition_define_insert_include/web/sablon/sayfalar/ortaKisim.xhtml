@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <body>
+        <ui:composition>
+
+            <h1 class="mavi">Orta kısım</h1>
+
+            <h:form>
+
+                <ol>      
+                   <li>
+                     <h:commandButton value="h:commandButton ile sayfa2'ye git" 
+                                      type="submit" 
+                                      action="#{yb.yonelenilecekSayfaGit()}" />
+                   </li>
+
+                   <li>
+                        <h:button value="h:button düğme ile sayfa2'ye git" 
+                                  outcome="sayfa2" />
+                   </li>
+                </ol>
+
+            </h:form>
+
+        </ui:composition>
+    </body>
+</html>
+
+

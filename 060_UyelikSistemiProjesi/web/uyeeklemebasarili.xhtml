@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <h:outputLabel value="Üye Kaydı"/>
+    </h:head>
+    <h:body>
+         
+          <h:outputStylesheet library="css" name="style.css" />
+  
+      <h:graphicImage library="images" height="40" width="40"
+                      name="tamam.png" />
+      
+                <h2>
+     <h:outputText class="renklendir" 
+                   value="#{ub.uyekullaniciadi}"/><br/>
+     <h:outputLabel value="Hoş geldin sefa geldin. "/><br/>
+                    <h:outputLabel value="Mübarek sisteme kayıt oldun. "/>
+                </h2>
+                  
+     <h:panelGrid columns="2">
+           <h:outputLabel>ID</h:outputLabel>  
+           <h:outputText class="metinkutusu" 
+                         value="#{ub.uyeid}"/>
+
+ 
+            <h:outputLabel value="Kullanıcı Adı :"></h:outputLabel>  
+            <h:outputText  class="metinkutusu" 
+                           value="#{ub.yeniuyekullaniciadi}"/>
+
+
+            <h:outputLabel value="Parola : "/> 
+            <h:outputText  class="metinkutusu" 
+                           value="#{ub.yeniuyeparola}"/>
+
+
+            <h:outputText value="E-Posta : "> </h:outputText>  
+            <h:outputText class="metinkutusu" 
+                          value="#{ub.yeniuyeeposta}"/>         
+      </h:panelGrid>
+                     
+      <h:form>
+
+        <h:graphicImage library="images" height="40" width="40" 
+                        name="cikis.png" />      
+         <h:commandLink value="Çıkış" 
+                        action="#{ub.uyeCikisiniDenetle()}"/>
+      
+
+             <h:graphicImage library="images" height="40" width="40" 
+                        name="duzenle.png" />       
+         <h:commandLink value="Düzenle" 
+                        action="uyeduzenleme?faces-redirect=true"/>
+         
+                  
+         <h:graphicImage library="images" height="40" width="40" 
+                        name="tamam.png" />      
+         <h:commandLink value="Üye paneli" 
+                        action="uyegirisibasarili?faces-redirect=true"/>
+
+      </h:form>    
+      
+      
+      
+  </h:body>
+</html>
+

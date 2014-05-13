@@ -1,0 +1,52 @@
+root {
+    display: block;
+}
+body
+{
+    font-family: sans-serif;
+    font-size: 20px;
+    color: blue;
+}
+h2
+{
+    font-size: 18px;
+    color: darkslateblue;
+    font-family:inherit;
+}
+.hata_mesaj
+{
+    font-size: 12px;
+    font-family: cursive;
+    font-weight: bold;
+    color: orangered;
+    padding: 12px;
+}
+
+.input_text{
+	font-family:serif, Helvetica, sans-serif;
+	font-size:20px;
+	border:1px solid deepskyblue;
+}
+
+.tablo{   
+	border-collapse:collapse;
+}
+
+.tablo-basligi{
+	text-align:center;
+	background:none repeat scroll 0 0 skyblue;
+	border-bottom:2px solid cornflowerblue;
+	padding:10px;
+}
+
+.tablo-tek-numarali-satir{
+	text-align:center;
+	background:none repeat scroll 0 0 azure;
+	border-top:red;
+}
+
+.tablo-cift-numarali-satir{
+	text-align:center;
+	background:none repeat scroll 0 0 lemonchiffon;
+	border-top:red;
+}

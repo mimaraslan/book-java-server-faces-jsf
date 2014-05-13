@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Java Database Connectivity</title>
+    </h:head>
+    <h:body>
+
+        <h:outputStylesheet library="css" name="style.css" />
+        <h1>JSF ve JDBC (Java Database Connectivity)</h1>
+
+        <h:dataTable value="#{yb.personelList}" var="yaz"
+           styleClass="tablo"
+           headerClass="tablo-basligi"
+           rowClasses="tablo-cift-numarali-satir,tablo-tek-numarali-satir">
+
+            <h:column>
+                <f:facet name="header">
+                     <h:outputLabel>ID</h:outputLabel>
+                </f:facet>
+                 <h:outputLabel value="#{yaz.personelid}"></h:outputLabel>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>ADI</h:outputLabel>
+                </f:facet>           
+                <h:outputLabel value="#{yaz.personeladi}"></h:outputLabel>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>SOYADI</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.personelsoyadi}"></h:outputLabel>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>GÖREVİ</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.personelgorevi}"></h:outputLabel>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>E-POSTA</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.personeleposta}"></h:outputLabel>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel>MAAŞI</h:outputLabel>
+                </f:facet>
+                <h:outputLabel value="#{yaz.personelmaasi}"></h:outputLabel>
+            </h:column>
+
+        </h:dataTable>
+
+    </h:body>
+
+</html>
+
+

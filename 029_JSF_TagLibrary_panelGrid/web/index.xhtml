@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head> 
+        <title>JSF Html Tag h:panelGrid</title>
+    </h:head> 
+    <h:body>
+        <h1>JSF Html Tag h:panelGrid</h1>
+
+        <h:outputStylesheet library="css" name="style.css" />
+
+       	<h:form>
+
+            <h:panelGrid columns="2">
+                <h1>Bilgi Girişi</h1>
+                <h:graphicImage library="images" 
+                                name="uyeol.png" />
+            </h:panelGrid>
+
+            <h:panelGrid columns="3">
+
+                <h:outputLabel>ADI : </h:outputLabel>  
+                <h:inputText id="adiID" 
+                             value="#{yb.adi}" 
+                             size="15" required="true" label="adi" >
+                </h:inputText>
+                <h:message for="adiID" style="color:red" />
+
+                <h:outputLabel>SOYADI : </h:outputLabel> 
+                <h:inputText id="soyadiID" 
+                             value="#{yb.soyadi}" 
+                             size="15" required="true" label="soyadi" >
+                </h:inputText>
+                <h:message for="soyadiID" styleClass="mavi" />
+
+                <h:outputLabel>NUMARASI : </h:outputLabel> 
+                <h:inputText id="numarasiID" 
+                             value="#{yb.numarasi}" 
+                             size="15" required="true" label="numarasi" >
+                    <f:convertNumber />
+                </h:inputText>
+                <h:message for="numarasiID" style="color:#ff3300" />
+
+            </h:panelGrid>
+
+            <h:commandButton value="Temizle" type="reset" />
+            <h:commandButton value="Gönder" action="sayfa2" />
+
+        </h:form>
+    </h:body>
+</html>

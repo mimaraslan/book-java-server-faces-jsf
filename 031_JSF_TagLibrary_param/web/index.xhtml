@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head> 
+        <title>JSF Core Tag f:param</title>
+    </h:head>  
+    <h:body>
+        <h2>JSF Core Tag f:param</h2>
+
+        <h:outputStylesheet library="css" name="style.css" />
+
+        <h:form id="form">
+
+            <h:messages style="color:red;margin:8px;" />	
+            <br />
+
+
+            <h:panelGrid columns="2">
+                <h1>Bilgi Girişi</h1>
+                <h:graphicImage library="images" 
+                                name="uyeol.png" />
+            </h:panelGrid>
+
+            <h:panelGrid columns="3">
+
+                <h:outputLabel>ADI : </h:outputLabel>  
+                <h:inputText id="adiID" 
+                             value="#{yb.adi}" 
+                             size="15" required="true" label="adi" >
+
+                    <f:validateLength minimum="2" maximum="30" />
+
+                </h:inputText>
+                <h:message for="adiID" style="color:red" />
+
+
+                <h:outputLabel>SOYADI : </h:outputLabel> 
+                <h:inputText id="soyadiID" 
+                             value="#{yb.soyadi}" 
+                             size="15" required="true" label="soyadi" >
+
+                    <f:validateLength minimum="2" maximum="30" />
+
+                </h:inputText>
+                <h:message for="soyadiID" styleClass="mavi" />
+
+
+            </h:panelGrid>
+
+            <h:commandButton value="Temizle" type="reset" />
+
+            <h:commandButton id="submitGonderDugmesiID" 
+                             value="Gönder" 
+                             action="#{yb.yonelenilecekSayfaGit()}">
+
+                <f:param name="bolumu" 
+                         value="Bilgisayar Mühendisliği" />
+
+            </h:commandButton>
+
+
+            <br />
+            <h:messages   styleClass="mavi" />	
+
+        </h:form>
+
+    </h:body>
+</html> 

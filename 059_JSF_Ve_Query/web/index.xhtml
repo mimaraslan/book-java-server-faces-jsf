@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>JSF ve JQuery</title>
+    </h:head>
+    <h:body>
+        <style>
+            div { background:#E0ECF8;
+                  font-weight:bold;
+                  font-size:16px; }
+       </style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script> 
+$(document).ready(function() {
+
+   $("#yenikayitpaneli").hide();
+  
+   $('a#uyegirisiID').click(function() {
+   $('#uyegirispaneli').animate({"height": "show"}, { duration: 1000 });
+   $("#yenikayitpaneli").animate({"height": "hide"}, { duration: 1000 });
+    return false;
+  }); 
+
+
+   $('a#yeniuyekaydiID').click(function() {
+   $("#uyegirispaneli").animate({"height": "hide"}, { duration: 1000 });
+   $('#yenikayitpaneli').animate({"height": "show"}, { duration: 1000 });	
+    return false;
+  });
+  
+ });
+</script>
+
+        <div id="uyegirispaneli">
+            ÜYE GİRİŞ PANELİNİN KODLARI BURAYA GELECEK
+        </div>
+
+        <div id="yenikayitpaneli">
+            YENİ KAYIT PANELİNİN KODLARI BURAYA GELECEK
+        </div>
+
+    <a id="yeniuyekaydiID">
+    <h:graphicImage library="images" height="40" width="40" 
+                name="kayitol.png" /> Yeni Üye Kaydı
+    </a>
+
+    <a id="uyegirisiID">
+    <h:graphicImage library="images" height="40" width="40" 
+                name="giris.png" /> Üye Girişi
+    </a>
+
+    </h:body>
+</html>
+

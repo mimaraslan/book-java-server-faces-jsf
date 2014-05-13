@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>f:convertNumber</title>
+    </h:head>
+    <h:body>
+        <h2>Girilen verinin sayısalara dönüştürülmesi
+            <hr/>
+            f:convertNumber</h2>
+
+        <h:form>
+
+            <h:panelGrid columns="3">
+
+                Ürün fiyatı : 
+                <h:inputText id="urunfiyati" value="#{yb.urunfiyati}" 
+                             size="20" required="true"
+                             label="Ürün fiyatı" >
+                    <f:convertNumber minFractionDigits="2" />
+                </h:inputText>
+
+                <h:commandButton value="Denetleme için gönder" action="sonuc" 
+                                 style="color:darkred"/>
+            </h:panelGrid>
+            <h:message for="urunfiyati" style="color:rosybrown" />
+
+        </h:form>
+    </h:body>
+</html>
+

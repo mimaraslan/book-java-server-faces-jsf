@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" 
+              content="text/html; charset=UTF-8" />
+
+        <title>Facelets Template</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="style-dosyamiz.css" />
+
+        <div class="kirmizi"><h2>JSF Facelets Tag 
+                ui:composition, ui:define, ui:insert, ui:param</h2></div>
+
+        <div id="sayfa">
+            <div id="baslik-kisim" class="tablo-ust-kisim">
+                <ui:insert name="ust" >
+                    <ui:include src="/sablon/sayfalar/ust.xhtml" /> 
+                </ui:insert>
+            </div>
+
+            <div id="orta-kisim" class="tablo-orta-kisim">
+                <ui:insert name="orta" >
+                    Geçerilen Parametre :<b> #{gecirilenParametre} </b>
+                    <ui:include src="/sablon/sayfalar/orta.xhtml" />
+                </ui:insert>
+            </div>
+
+            <div id="alt-kisim" class="tablo-alt-kisim">
+                <ui:insert name="alt" >
+                    <ui:include src="/sablon/sayfalar/alt.xhtml" />
+                </ui:insert>
+            </div>
+        </div>    
+    </h:body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head> 
+        <title>JSF Html Tag h:dataTable</title>
+    </h:head>  
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css" />
+        <div class="kirmizi"><h2>JSF Html Tag h:dataTable</h2></div>
+
+
+        <h:outputStylesheet library="css" name="table-style.css" />
+
+        <h:dataTable value="#{yb.personelListesi}" var="p"
+                     styleClass="personel-table"
+                     headerClass="personel-tablo-baslik"
+         rowClasses="personel-tablo-tek-satir,personel-tablo-cift-satir">
+
+            <h:column>
+                <h:graphicImage library="images" name="ok_isareti.png" />
+                <f:facet name="header">NUMARASI</f:facet><!--kolon başlığı-->
+                #{p.numarasi}<!--satır kayıdı-->
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">ADI SOYADI</f:facet><!--kolon başlığı-->
+                #{p.adiSoyadi}<!--satır kayıdı-->
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">YAŞI</f:facet><!--kolon başlığı-->
+                #{p.yasi}<!--satır kayıdı-->
+            </h:column>
+
+            <h:column>
+                <h:graphicImage library="images" name="para.png" />
+                <f:facet name="header">MAAŞI</f:facet><!--kolon başlığı-->
+                #{p.maasi}<!--satır kayıdı-->
+            </h:column>
+
+        </h:dataTable>
+    </h:body>
+</html> 

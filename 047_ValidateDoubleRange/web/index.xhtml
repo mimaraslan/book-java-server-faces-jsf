@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>f:validateDoubleRange</title>
+    </h:head>
+    <h:body>
+        <h2>Virgüllü sayı tipinde girilen verinin alt ve üst sınırının denetimi 
+            <hr/>f:validateDoubleRange</h2>
+
+        <h:form>
+
+            <h:panelGrid columns="3">
+                
+                  Bir virgüllü sayı giriniz : 
+           <h:inputText id="virgullusayi" value="#{yb.virgullusayi}" 
+                        size="40" required="true"
+                        label="Belirlenen aralıkta bir virgüllü sayı giriniz." >
+                <f:validateDoubleRange minimum="12.99" maximum="15.17" />
+            </h:inputText>
+         
+                <h:commandButton value="Gönder" action="sonuc" />
+            </h:panelGrid>
+
+            <h:message for="virgullusayi" style="color:red" />
+
+        </h:form>
+    </h:body>
+</html>
+

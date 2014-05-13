@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>f:convertNumber</title>
+    </h:head>
+    <h:body>
+        <h2>Girilen verinin sayısalara dönüştürülmesi 
+            <hr/>
+            f:convertNumber</h2>
+
+        Noktadan sonra ki hassasiyet çıktısı : <br/>
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber minFractionDigits="1" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber minFractionDigits="5" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber minFractionDigits="6" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber minFractionDigits="7" />
+        </h:outputText>
+        <br/>
+        <hr/>    
+
+        Bizim istediğimiz format çıktısı : <br/>
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber pattern="#0.0" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber pattern="#0.00" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber pattern="#0.000" />
+        </h:outputText>
+        <br/>
+
+        <hr/>
+        Sayısal formatta çıktı : <br/>
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber type="number" />
+        </h:outputText>
+        <br/>
+        <hr/>   
+
+        Ülke koduna göre parasal çıktı : <br/>
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber currencyCode="TRL" type="currency" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber currencyCode="GBP" type="currency" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber currencyCode="USD" type="currency" />
+        </h:outputText>
+        <br/>
+        <hr/>   
+
+        Para sembollerine göre £  - $  - € parasal çıktı : <br/>
+        <h:outputText value="#{yb.urunfiyati}">
+            <f:convertNumber currencySymbol="£" type="currency" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}">
+            <f:convertNumber currencySymbol="$" type="currency" />
+        </h:outputText>
+        <br/>
+
+        <h:outputText value="#{yb.urunfiyati}">
+            <f:convertNumber currencySymbol="€" type="currency" />
+        </h:outputText>
+        <br/>
+        <hr></hr>       
+
+        Yüzdelik formatta çıktı : <br/>
+        <h:outputText value="#{yb.urunfiyati}" >
+            <f:convertNumber type="percent" />
+        </h:outputText>
+
+    </h:body>
+</html>

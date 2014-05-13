@@ -1,0 +1,22 @@
+.tablo{   
+	border-collapse:collapse;
+}
+
+.tablo-basligi{
+	text-align:center;
+	background:none repeat scroll 0 0 skyblue;
+	border-bottom:2px solid cornflowerblue;
+	padding:10px;
+}
+
+.tablo-tek-numarali-satir{
+	text-align:center;
+	background:none repeat scroll 0 0 azure;
+	border-top:red;
+}
+
+.tablo-cift-numarali-satir{
+	text-align:center;
+	background:none repeat scroll 0 0 lemonchiffon;
+	border-top:red;
+}

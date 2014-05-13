@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Üye Çıkışı</title>
+    </h:head>
+    <h:body>
+        
+          <h:outputStylesheet library="css" name="style.css" />
+      
+            <h:form>
+                <h2><h:outputLabel>Tekrar bekleriz.</h:outputLabel> 
+                <h:outputText class="tablo-cift-numarali-satir" 
+                              value="#{ub.uyekullaniciadi}"/>
+                    <br/>Allah'a emanet ol.
+                </h2>
+   
+<h:panelGrid columns="2">
+
+<h:outputLabel>ID</h:outputLabel>  
+<h:outputText class="tablo-tek-numarali-satir" value="#{ub.uyeparola}"/>
+
+<h:outputLabel value="Kullanıcı Adı :"> </h:outputLabel>  
+<h:outputText class="tablo-tek-numarali-satir" value="#{ub.uyekullaniciadi}"/>
+
+<h:outputLabel value="Parola : "/> 
+<h:outputText class="tablo-tek-numarali-satir" value="#{ub.uyeparola}"/>
+
+<h:outputText value="E-Posta : "> </h:outputText>  
+<h:outputText class="tablo-tek-numarali-satir" value="#{ub.uyeeposta}"/>
+
+</h:panelGrid>
+      
+</h:form>
+
+       <h:form>
+          
+          <h:graphicImage library="images" height="40" width="40" 
+                          name="giris.png" />
+        
+          <h:commandLink value="Giriş" 
+                         action="uyegirisi?faces-redirect=true"/>
+       </h:form>  
+          
+    </h:body>
+</html>
+

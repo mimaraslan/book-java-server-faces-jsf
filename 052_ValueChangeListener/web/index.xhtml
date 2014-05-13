@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title>f:valueChangeListener</title>
+    </h:head>
+
+    <h:body> <h2>Olaylardaki değiştirilen değeri dinlemek 
+            <hr/>
+            f:valueChangeListener</h2>
+        <h:form>
+            <h:panelGrid columns="2">
+
+                <h:outputLabel value="Seçilen personel hakkında:" />   
+                <h:inputText id="personel" value="#{personel.hakkinda}" size="45" />
+
+                <ui:remove>
+                    <h:outputLabel 
+                        value="Seçilen personelin adı soyadı {ValueChangeListener class}:"/>
+                    <h:selectOneMenu value="#{personel.hakkinda}" onchange="submit()">
+                        <f:valueChangeListener type="com.mimaraslan.PersonelValueListener" />
+                        <f:selectItems value="#{personel.personelInMap}" />
+                    </h:selectOneMenu>
+                </ui:remove> 
+
+                <h:outputLabel 
+                    value="Seçilen personelin adı soyadı {method binding}: " />
+                <h:selectOneMenu value="#{personel.hakkinda}" onchange="submit()"
+                                 valueChangeListener="#{personel.personelHakkindaChanged}">
+                    <f:selectItems value="#{personel.personelInMap}" />
+                </h:selectOneMenu>
+
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head> 
+        <title>JSF Html Tag h:link h:commandLink h:outputLink</title>
+    </h:head> 
+    <h:body>
+        <h2>JSF Html Tag h:link h:commandLink h:outputLink</h2>
+        <h:form>
+            <ol>
+                <li>
+                    <h:link value="h:link ile sayfa2'ye git" outcome="sayfa2" />
+                </li>
+                <li>
+                    <h:link value="h:link ile sayfa2'ye parametre gönderiliyor" 
+                            outcome="sayfa2" >
+                        <f:param name="param1" value="İstanbul" />
+                        <f:param name="param2" value="1453" />
+                    </h:link>
+                </li>
+                <li>
+                    <h:link outcome="sayfa2" >
+                        <h:graphicImage library="images" 
+                                        name="olumlu_dusunce.jpg" />
+                    </h:link>
+                </li>
+            </ol>  
+            <hr/>
+
+            <ol>             
+                <li>
+                    <h:commandLink action="#{yb.yonelenilecekSayfaGit}" 
+                                   value="h:commandLink sayfa2'ye git" />
+                </li>
+                <li>
+                    <h:commandLink action="#{yb.yonelenilecekSayfaGit}" 
+                  value="h:commandLink sayfa2'ye parametre gönderilemiyor.">
+                        <f:param name="param1" value="İstanbul" />
+                        <f:param name="param2" value="1453" />
+                    </h:commandLink>
+                </li>
+                <li>
+                    <h:commandLink action="#{yb.yonelenilecekSayfaGit}">
+                        <h:graphicImage library="images" 
+                                        name="olumlu_dusunce.jpg" />
+                    </h:commandLink>
+                </li>
+            </ol>
+            <hr/>
+
+            <ol>  
+                <li>
+                    <h:outputLink value="sayfa2.xhtml" >
+                        h:outputLink ile sayfa2'ye git
+                    </h:outputLink>
+                </li>
+                <li>
+                    <h:outputLink value="sayfa2.xhtml">
+                <h:outputText value="h:outputLink ile 
+                                      sayfa2'ye parametre gönderiliyor" />
+                        <f:param name="param1" value="İstanbul" />
+                        <f:param name="param2" value="1453" />
+                    </h:outputLink>
+                </li>
+                <li>
+                    <h:outputLink value="sayfa2.xhtml">
+                        <h:graphicImage library="images" 
+                                        name="olumlu_dusunce.jpg" />
+                    </h:outputLink>
+                </li>
+            </ol>
+        </h:form>
+
+    </h:body>
+
+</html>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head> 
+        <title>JSF Html Tag h:selectManyMenu </title>
+    </h:head>
+    <h:body>
+        <h1>JSF Html Tag h:selectManyMenu </h1>
+
+        <h:form>
+
+1. h:selectManyMenu içindekileri kendimiz elimiz ile doldurduk.<br /> 
+            <h:selectManyMenu value="#{yb.dil1}">
+
+                <f:selectItem itemValue="Java Web Paketi" 
+                              itemLabel="JAVA-JSP-JSF" />
+
+                <f:selectItem itemValue="Java Mobil Paketi" 
+                              itemLabel="JAVA-ANDROID" />
+
+                <f:selectItem itemValue="Java Masaüstü Paketi" 
+                              itemLabel="JAVA-GUI" />
+
+                <f:selectItem itemValue="Java Veritabanı Paketi" 
+                              itemLabel="JAVA-ORACLE" />
+
+            </h:selectManyMenu>
+            <br /><hr />
+
+            2. h:selectManyMenu içini Map Haritalama ile doldurduk.<br />
+            <h:selectManyMenu value="#{yb.dil2}">   
+                <f:selectItems value="#{yb.dil2Degeri}" />
+            </h:selectManyMenu>
+            <br /><hr />
+
+            3. h:selectManyMenu içini bir sınıf ve nesne ile doldurduk.<br />
+            <h:selectManyMenu value="#{yb.dil3}">    
+
+                <f:selectItems value="#{yb.dil3Degeri}"  
+                               var="d"
+                               itemLabel="#{d.egitimAdi}" 
+                               itemValue="#{d.egitimUcreti}" />
+
+            </h:selectManyMenu>
+            <br /><hr />
+
+            <h:commandButton value="Temizle" type="reset" />
+            <h:commandButton value="Gönder" action="sayfa2" />
+        </h:form>
+
+    </h:body>
+</html>
+

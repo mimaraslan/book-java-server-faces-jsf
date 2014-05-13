@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:depo="http://java.sun.com/jsf/composite/depo">
+    <h:head>
+        <title>Composite Components</title>
+    </h:head>
+    <h:body>
+        <h2>Bileşik bileşenler ile çalışmak 
+            <hr/>
+            Composite Components</h2>
+                
+        <depo:kayitol kullaniciAdiYaziEtiketiLabel="Kullanıcı Adı" 
+                      kullaniciAdiDegeriValue="#{yb.kullaniciAdi}" 
+
+                      adiSoyadiYaziEtiketiLabel="Adı soyadı" 
+                      adiSoyadiDegeriValue="#{yb.adiSoyadi}"
+
+                      epostaYaziEtiketiLabel="E-Posta" 
+                      epostaAdiDegeriValue="#{yb.eposta}"    
+
+                      parolaYaziEtiketiLabel="Parola" 
+                      parolaAdiDegeriValue="#{yb.parola}"
+
+                      kayitOnayYaziEtiketiLabel="Kayıt Onay" 
+                      kayitOnayDugmeAction="#{yb.kayitOlActionMetodu}">
+        </depo:kayitol>
+            
+    </h:body>
+</html>
+

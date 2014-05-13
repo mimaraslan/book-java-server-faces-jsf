@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+    <h:head> 
+        <title>JSF Html Tag h:dataTable</title>
+    </h:head>   
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css" />
+        <div class="kirmizi"><h2>JSF Html Tag h:dataTable</h2></div>
+
+        <h:form>
+
+            <div class="yesil"><h2>PERSONEL KAYIT</h2></div>
+
+            <table>
+                <tr>
+                    <td>NUMARASI :</td>
+                    <td><h:inputText size="25" value="#{yb.numarasi}" /></td>
+                </tr>
+                <tr>
+                    <td>ADI SOYADI :</td>
+                    <td><h:inputText size="25" value="#{yb.adiSoyadi}" /></td>
+                </tr>
+                <tr>
+                    <td>YAŞI :</td>
+                    <td><h:inputText size="25" value="#{yb.yasi}" /></td>
+                </tr>
+                <tr>
+                    <td>MAAŞI :</td>
+                    <td><h:inputText size="25" value="#{yb.maasi}" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:commandButton value="Ekle" 
+                                         action="#{yb.kayitEkle()}" />
+                        <h:commandButton value="Değişikleri Kaydet" 
+                                         action="#{yb.degisikligiKaydet()}" />
+                    </td>
+                </tr>
+            </table> 
+            <hr />
+
+            <h:outputStylesheet library="css" name="table-style.css" />
+
+            <h:dataTable value="#{yb.personelListesi}" var="p"
+                         styleClass="personel-table"  headerClass="personel-tablo-baslik"
+                         rowClasses="personel-tablo-tek-satir,personel-tablo-cift-satir">
+
+                <h:column>
+                    <f:facet name="header">NUMARASI</f:facet><!--kolon başlığı-->
+                    <!--#{p.numarasi}--><!--satır kayıdı-->
+                    <h:inputText value="#{p.numarasi}" size="10" rendered="#{p.duzenle}" />
+                    <h:outputText value="#{p.numarasi}" rendered="#{not p.duzenle}" />
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+
+                        <h:commandLink action="#{yb.siralaPersonelAdiSoyadi()}">
+                            ADI SOYADI
+                        </h:commandLink>
+
+                    </f:facet><!--kolon başlığı-->
+
+                    <!--#{p.adiSoyadi}--><!--satır kayıdı-->
+                    <h:inputText value="#{p.adiSoyadi}" size="15" rendered="#{p.duzenle}" />
+                    <h:outputText value="#{p.adiSoyadi}" rendered="#{not p.duzenle}" />
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">YAŞI</f:facet><!--kolon başlığı-->
+                    <!--#{p.yasi}--><!--satır kayıdı-->
+                    <h:inputText value="#{p.yasi}" size="5" rendered="#{p.duzenle}" />
+                    <h:outputText value="#{p.yasi}" rendered="#{not p.duzenle}" />
+                </h:column>
+
+                <h:column>
+                    <h:graphicImage library="images" name="para.png" />
+                    <f:facet name="header">
+                        <h:commandLink action="#{yb.siralaPersonelMaasi()}">
+                            MAAŞI
+                        </h:commandLink>
+                    </f:facet><!--kolon başlığı-->
+
+                    <!-- #{p.maasi}--> <!-- satır kayıdı-->
+                    <h:inputText value="#{p.maasi}" size="5" rendered="#{p.duzenle}" />
+                    <h:outputText value="#{p.maasi}" rendered="#{not p.duzenle}" />
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:graphicImage library="images" name="sil_ust.png" />
+                        <br/><div class="kirmizi">SİL</div>
+                    </f:facet>
+                    <h:graphicImage library="images" name="sil.png" />
+                    <h:commandLink value="Sil" action="#{yb.kayitSil(p)}" />
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:graphicImage library="images" name="duzenle_ust.png"/>
+                        <br/><div class="kirmizi">DÜZENLE</div>
+                    </f:facet>
+
+                    <h:graphicImage library="images" name="duzenle.png" 
+                                    rendered="#{not p.duzenle}" />
+                    <h:commandLink value="Düzenle" 
+                                   action="#{yb.kayitDuzenle(p)}" 
+                                   rendered="#{not p.duzenle}" />
+
+
+                    <h:graphicImage library="images" name="onay.png" 
+                                    rendered="#{p.duzenle}" /><br/>
+                    <h:commandButton value="Değişikleri Kaydet" 
+                                     action="#{yb.degisikligiKaydet()}"
+                                     rendered="#{p.duzenle}"/>
+                </h:column>
+
+            </h:dataTable>
+   <!--         <table>
+
+                <ui:repeat value="#{yb.personelListesi}" var="p" varStatus="status">
+
+                    <tr>
+                        <td>#{p.numarasi}</td>
+                        <td>#{p.adiSoyadi}</td>
+                        <td>#{p.yasi}</td>
+                        <td>#{p.maasi}</td>
+                    </tr>
+
+                </ui:repeat>
+
+            </table>        
+-->
+        </h:form>
+    </h:body>
+</html>

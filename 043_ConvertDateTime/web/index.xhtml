@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head> 
+        <title>f:convertDateTime</title>
+    </h:head>
+    <h:body>
+        <h2>Girilen verinin tarihe dönüştürülmesi 
+            <hr/>
+            f:convertDateTime</h2>
+
+        <h:form>
+
+            <h:panelGrid columns="3">
+
+                Doğum Tarihi : 
+                <h:inputText id="dogumtarihi" value="#{yb.dogumtarihi}" 
+                             size="20" required="true"
+                             label="Boş geçmeyiniz. Geçerli bir tarih giriniz.">
+
+                    <f:convertDateTime pattern="d/M/yyyy" />
+                </h:inputText>
+
+                <h:commandButton value="Gönder" action="sonuc" />
+
+            </h:panelGrid>
+            <h:message for="dogumtarihi" style="color:crimson" />  
+
+        </h:form>
+    </h:body>
+</html>
+

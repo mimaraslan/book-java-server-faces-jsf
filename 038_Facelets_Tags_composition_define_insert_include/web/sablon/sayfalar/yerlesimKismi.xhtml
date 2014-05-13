@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+         <h:outputStylesheet library="css" name="style-dosyamiz.css" />
+    </h:head>
+    <h:body>
+        <div id="sayfa">
+            <div id="baslik-kisim" class="tablo-ust-kisim">
+                <ui:insert name="ust" >
+                    <ui:include src="/sablon/sayfalar/ustKisim.xhtml" />
+                </ui:insert>
+            </div>
+
+            <div id="orta-kisim" class="tablo-orta-kisim">
+                <ui:insert name="orta" >
+                    <ui:include src="/sablon/sayfalar/ortaKisim.xhtml" />
+                </ui:insert>
+            </div>
+
+            <div id="alt-kisim" class="tablo-alt-kisim">
+                <ui:insert name="alt" >
+                    <ui:include src="/sablon/sayfalar/altKisim.xhtml" />
+                </ui:insert>
+            </div>
+        </div>
+    </h:body> 
+</html>

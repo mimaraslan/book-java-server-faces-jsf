@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+
+    <navigation-rule>    
+        <description>UYE GIRIS SAYFASI</description>
+        <from-view-id>uyegirisi.xhtml</from-view-id>
+        
+        <navigation-case>
+            <from-action>#{ub.uyeGirisiniDenetle}</from-action>
+            <from-outcome>gecerli</from-outcome>
+            <to-view-id>basarili.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{ub.uyeGirisiniDenetle}</from-action>
+            <from-outcome>gecersiz</from-outcome>
+            <to-view-id>basarisiz.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>   
+        <description>BASARISIZ UYE GIRISININ SAYFASI</description>
+        <from-view-id>/basarisiz.xhtml</from-view-id>
+      
+        <navigation-case>
+            <from-action>#{ub.uyeGirisiniDenetle}</from-action>
+            <from-outcome>gecerli</from-outcome>
+            <to-view-id>/basarili.xhtml</to-view-id>
+        </navigation-case>
+      
+        <navigation-case>
+            <from-action>#{ub.uyeGirisiniDenetle}</from-action>
+            <from-outcome>gecersiz</from-outcome>
+            <to-view-id>/basarisiz.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+</faces-config>
+
+
+
+

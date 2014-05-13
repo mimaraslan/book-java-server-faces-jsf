@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <h:outputLabel value="Hata oluştu."/>
+    </h:head>
+    <h:body>
+
+        <h:outputStylesheet library="css" name="style.css" />
+
+        <h:graphicImage library="images" height="40" width="40"
+                        name="dikkat.png" />
+
+        <h2><h:outputLabel value="Hatasız kul olmaz. "/>
+            <h:outputText class="metinkutusu" 
+                          value="#{ub.uyekullaniciadi}"/>
+            <br/><h:outputLabel value="Kusurları örtmesini bilmelisin mübarek."/>
+        </h2>
+
+        <h:form>
+
+            <h:graphicImage library="images" height="40" width="40" 
+                            name="cikis.png" />      
+            <h:commandLink value="Çıkış" 
+                           action="#{ub.uyeCikisiniDenetle()}"/>
+
+
+            <h:graphicImage library="images" height="40" width="40" 
+                            name="tamam.png" />      
+            <h:commandLink value="Üye paneli" 
+                           action="uyegirisibasarili?faces-redirect=true"/>
+
+        </h:form> 
+    </h:body>
+</html>
+
