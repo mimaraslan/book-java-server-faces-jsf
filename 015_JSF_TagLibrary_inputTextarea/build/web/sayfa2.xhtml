@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>JSF Html Tag h:inputTextarea </title>
+    </h:head>
+    <h:body> 
+        <h1>Gelen değerler</h1>
+ 
+        Adı Soyadı : <h:outputText value="#{yonetimliBean.adisoyadi}" />
+        <br/><br/>Mesaj : <h:outputText value="#{yonetimliBean.mesaj}" />
+        <br/><br/>Adres : <h:outputText value="#{yonetimliBean.adres}" />
+
+        <br/><br/>Adı Soyadı - Mesaj - Adres :<br/> 
+        <h:outputText value="#{yonetimliBean.adisoyadi} *** 
+                      #{yonetimliBean.mesaj} *** 
+                      #{yonetimliBean.adres}" />
+    </h:body>
+</html>
+

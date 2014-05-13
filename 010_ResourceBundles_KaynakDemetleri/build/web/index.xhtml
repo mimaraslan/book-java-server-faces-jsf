@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Resource Bundles - Kaynak Demetleri</title>
+    </h:head>
+    <h:body>
+        <h2>Resource Bundles - Kaynak Demetleri</h2>
+        <f:loadBundle basename="com.firmaadi.mesajlar" var="msj"/>
+        <ol>
+            <li><h:outputText value="#{msj.mesaj}" /></li>
+            <br/>
+            <li><h:outputText value="#{msj['mesaj.cumle1']}" />
+                <h:outputText value="#{msj['mesaj.cumle2']}" />
+                <h:outputText value="#{msj['mesaj.cumle3']}" /></li>
+            <br/>
+            <li><h:outputText value="#{msj['mesaj.cumle1']}" escape="false"/>      
+                <h:outputText value="#{msj['mesaj.cumle2']}" escape="false" />
+                <h:outputText value="#{msj['mesaj.cumle3']}" escape="false" /></li>
+            <hr/>
+            <li>
+                <h:outputFormat value="#{msj['mesaj.parametre1']}">
+                    <f:param value="Güzel gören güzel düşünür." /> <br/>
+                    <f:param value="Güzel düşünen hayatından lezzet alır." />
+                    <f:param value="B.S.N." />
+                </h:outputFormat>
+            </li>
+            <li>
+                <h:outputFormat value="#{msj['mesaj.parametre2']}">
+                    <f:param value="Мыслит красиво тот, кто видит красивое." />
+                    <f:param value="тот кто мыслит красиво-тот чувствует вкус жизни."/>
+                    <f:param value="Б.С.Н." />
+                </h:outputFormat>
+            </li>
+        </ol>
+    </h:body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="All Faces Configurations" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="urunler.xhtml" x="12" y="41" zoom="true"/>
+        <Node id="uyeol.xhtml" x="220" y="91" zoom="true"/>
+        <Node id="odeme.xhtml" x="216" y="42" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="siparis.xhtml" x="20" y="23" zoom="true"/>
+        <Node id="urunler.xhtml" x="18" y="73" zoom="true"/>
+        <Node id="uyeol.xhtml" x="243" y="74" zoom="true"/>
+        <Node id="index.xhtml" x="245" y="124" zoom="true"/>
+        <Node id="odeme.xhtml" x="237" y="25" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="urunler.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="uyeol.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="odeme.xhtml" x="150" y="300" zoom="true"/>
+    </Scope>
+</Scene>

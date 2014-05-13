@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+       <title>JSF Html Tag h:selectBooleanCheckbox ve h:selectManyCheckbox</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+           <title>JSF Html Tag h:selectBooleanCheckbox ve h:selectManyCheckbox</title>
+            <h2>Basit tek bir tane checkbox örneği </h2>
+
+            <h:graphicImage value="resimler/onay.png"/>
+            <b style="color: red">Kod yazmayı seviyor musunuz? </b>
+
+            <h:selectBooleanCheckbox value="#{yb1.yazilimiSeviyorMu}" /> 
+
+            <hr/>
+
+            <h2>Çoklu checkbox kutuları</h2>
+            1. h:selectManyCheckbox içerisini elle kendimiz doldurduk.  
+            <br /><h:graphicImage value="/resimler/android.png"/>
+            <b style="color: red">Android Severler</b>
+            <h:selectManyCheckbox value="#{yb2.androidSeverler}">
+                <f:selectItem itemValue="1" itemLabel="Ebubekir Yılmaz" />
+                <f:selectItem itemValue="2" itemLabel="Eren Satı" />
+                <f:selectItem itemValue="3" itemLabel="Recai Aydoğdu" />
+                <f:selectItem itemValue="4" itemLabel="Mustafa Baba" />
+                <f:selectItem itemValue="5" itemLabel="Nevzat Akkaya" />
+                <f:selectItem itemValue="6" itemLabel="Ramin Orucov" /> 
+            </h:selectManyCheckbox>
+            <br />
+
+            2. h:selectManyCheckbox içerisini dizi ile doldurduk. 
+            <br /><h:graphicImage value="/resimler/iphone.png"/>
+            <b style="color: red">iPhone Severler</b>
+            <h:selectManyCheckbox value="#{yb3.iphoneSeverler}">
+                <f:selectItems value="#{yb3.iphoneSeverlerAdiSoyadi}" />
+            </h:selectManyCheckbox>
+            <br />
+
+            3. h:selectManyCheckbox içerisini Map(Harita) ile doldurduk.  
+            <br /><h:graphicImage value="/resimler/java.png"/>
+            <b style="color: red">Java GUI Severler</b>
+            <h:selectManyCheckbox value="#{yb4.javaGuiSeverler}">
+                <f:selectItems value="#{yb4.javaGuiSeverlerAdiSoyadi}" />
+            </h:selectManyCheckbox>
+            <br />
+
+            4. h:selectManyCheckbox içerisini bir sınıfın tipindeki 
+            bir dizi ile doldurduk.  
+            <br /><h:graphicImage value="/resimler/jsfweb.png"/>
+            <b style="color: red">JSF Severler</b>
+            <h:selectManyCheckbox value="#{yb5.jsfSeverler}">
+                <f:selectItems value="#{yb5.jsfSeverlerAdiSoyadi}" 
+                               var="gelen"
+                               itemLabel="#{gelen.sayiEtiketi}" 
+                               itemValue="#{gelen.sayiDegeri}" />
+            </h:selectManyCheckbox>
+            <br />
+
+
+            <h:commandButton value="Temizle" type="reset" />
+            <h:commandButton value="Gönder" action="sayfa2" />
+
+        </h:form>
+
+    </h:body>
+
+</html>

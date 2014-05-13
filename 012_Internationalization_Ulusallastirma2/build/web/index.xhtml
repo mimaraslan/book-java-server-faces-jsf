@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="#{localeBean.yerelDurum}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">  
+    <h:head>
+        <title>Internationalization Ulusallastirma2</title>
+    </h:head>
+    <h:body>
+        <h:form>
+           <h:panelGrid columns="3" style="border: 2px solid gold; width:500px">
+               
+                Select Language :  <h:outputText value="#{mesaj['language']}" /> 
+
+                <h:selectOneMenu value="#{dil.yerelDurum}" onchange="submit()"
+                      valueChangeListener="#{dil.yerelDurumDegisiminiKontrolEt}"
+                      style="border: 2px solid darkgoldenrod; width:200px">
+                    <f:selectItems value="#{dil.ulkeler}" /> 
+                </h:selectOneMenu>
+                
+           </h:panelGrid>
+
+            <h:panelGrid style="border: 5px solid red; width:500px" 
+                         columns="2" cellspacing="10" cellpadding="0">
+                
+             <f:facet name="UyeOlUstKisim">#{mesaj['system_login']}</f:facet>
+             
+                <h:outputText value="#{mesaj['name']}" />
+                <h:inputText value="-"  />
+                <h:outputText value="#{mesaj['surname']}" />
+                <h:inputText value="-"  />
+                <h:outputText value="#{mesaj['username']}" />
+                <h:inputText value="-"  />
+                <h:outputText value="#{mesaj['password']}" />
+                <h:inputText value="-" />
+                <h:panelGroup />
+                <h:commandButton value="#{mesaj['login']}" 
+                                 action="UyeGirisMetoduBurayaGelecek" />
+            </h:panelGrid>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+

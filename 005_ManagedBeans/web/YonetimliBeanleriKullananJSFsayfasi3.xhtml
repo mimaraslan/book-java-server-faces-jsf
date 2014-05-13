@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Managed Bean- Yönetimli Kahve Çekirdeği 3</title>
+    </h:head>
+    <body>
+        <f:view>
+            <h3>Managed Bean- Yönetimli Kahve Çekirdeği 3</h3>
+            <h:form>
+
+                <h:panelGrid id="panel" columns="2" border="0">
+                    <f:facet name="header">
+                        <h:outputText value="Üye Girişi" />
+                    </f:facet>
+
+                    <h:outputText value="Adı : " />
+                    <h:inputText value="#{yonetimliBean3.adi}" />
+
+                    <h:outputText value="Soyadı : " />
+                    <h:inputText value="#{yonetimliBean3.soyadi}" />
+
+                    <h:outputText value="Deneyim" />
+                    <h:selectOneRadio layout="pageDirection"
+                                      value="#{yonetimliBean3.deneyim}">
+                        <f:selectItem itemValue="JSP" itemLabel="JavaServer Pages" />
+                        <f:selectItem itemValue="JSF" itemLabel="JavaServer Faces" />
+                        <f:selectItem itemValue="Spring" itemLabel="Spring" />
+                        <f:selectItem itemValue="Hibernate" itemLabel="Hibernate" />
+                        <f:selectItem itemValue="PF" itemLabel="PrimeFaces" />
+                    </h:selectOneRadio>
+
+                    <h:commandButton value="Temizle" type="reset" />
+                    <h:commandButton value="Gönder"
+                                     action="#{yonetimliBean3.yazdirMetodu}" />
+
+                    <f:facet name="footer">
+                        <h:outputText value="Girilen bilgileriniz." />
+                    </f:facet>
+                </h:panelGrid>
+
+                <hr />
+                <h:outputText value="ADI SOYADI :" />
+                <h:outputLabel id="isimSoyisim"
+                               value="#{yonetimliBean3.adi} #{yonetimliBean3.soyadi} " />
+                <br />
+                <h:outputText value="DENEYİM :" />
+                <h:outputLabel id="tecrube" value="#{yonetimliBean3.deneyim}" />
+
+            </h:form>
+        </f:view>
+    </body>
+</html>

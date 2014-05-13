@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Başlangıç</title>
+    </h:head>
+    <h:body>   
+        Başlangıç
+        <h:graphicImage value="/resimler/java_kahvesi.png" 
+                        style="border: thin solid red"/>
+
+        <h:form>
+            <h:inputText id="siparisToplam" 
+                         value="#{odemeController.siparisToplam}"
+                         style="color: blue; background: #ccffff;"/>
+
+            <h:commandButton action="#{odemeController.odemeAc()}" 
+                             value="Tıkla odeme.xhtml için" />
+        </h:form>
+  
+        <h:form>
+            <h:commandButton  action="#{odemeController.siparisAc()}" 
+                              value="Tıkla siparis.xhtml için" />
+        </h:form>
+
+        <h:form>
+            <h:commandButton  action="#{odemeController.urunlerAc()}" 
+                              value="Tıkla urunler.xhtml için" />
+        </h:form>
+
+        <h:form>
+            <h:commandButton  action="#{odemeController.uyeolAc()}" 
+                              value="Tıkla uyeol.xhtml için" />
+        </h:form>
+    </h:body>
+</html>

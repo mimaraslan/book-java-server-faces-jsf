@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Managed Bean- Yönetimli Kahve Çekirdeği</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h3>Managed Bean- Yönetimli Kahve Çekirdeği</h3>
+            <h:form>
+                Adı : <h:inputText id="isim" value="#{yonetimliBean.adi}" />
+                <br />
+                Soyadı <h:inputText id="soyisim" value="#{yonetimliBean.soyadi}" />
+                <br />
+
+                <h:commandButton value="Gönder"
+                                 action="#{yonetimliBean.yazdirMetodu}"/>
+                <br />
+                ADI SOYADI :<h:outputLabel id="isimSoyisim"
+                            value="#{yonetimliBean.adi} #{yonetimliBean.soyadi} " />
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

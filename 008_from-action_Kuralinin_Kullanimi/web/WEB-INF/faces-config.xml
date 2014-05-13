@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.0"
+              xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+	
+        <navigation-case>
+            <from-action>#{sayfaKontrolcusu.gitSayfa1}</from-action>
+            <from-outcome>basarili</from-outcome>
+            <to-view-id>/sayfa1.xhtml</to-view-id>
+        </navigation-case>
+	
+        <navigation-case>
+            <from-action>#{sayfaKontrolcusu.gitSayfa2}</from-action>
+            <from-outcome>basarili</from-outcome>
+            <to-view-id>/sayfa2.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>#{sayfaKontrolcusu.gitSayfa3}</from-action>
+            <from-outcome>olumlu</from-outcome>
+            <to-view-id>/sayfa3.xhtml</to-view-id>
+        </navigation-case>
+    
+    </navigation-rule>	
+</faces-config>

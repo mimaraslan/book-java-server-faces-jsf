@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <title>JSF Html Tag h:inputHidden</title>
+
+<script type="text/javascript">
+    function mesajiYazdir(){
+      alert(document.getElementById('bizimformumuz_id:gizlialan_id').value +
+            document.getElementById('bizimformumuz_id:mesajalan_id').value);
+    }
+</script>
+        
+    </h:head>
+
+    <h:body>
+        <h1>JSF Html Tag h:inputHidden</h1>
+
+        <h:form id="bizimformumuz_id">
+            
+          <h:inputHidden value="#{yb.verileceMesaj}" id="gizlialan_id" />
+          <h:inputText value="B.S.N." id="mesajalan_id"/>
+          <h:commandButton type="button" value="Mesajı almak için beni tıkla"  
+                             onclick="mesajiYazdir()" />
+        </h:form>
+    </h:body>
+
+</html>
+

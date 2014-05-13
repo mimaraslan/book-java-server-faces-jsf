@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Faces Configuration Only" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="index.xhtml" x="34" y="32" zoom="true"/>
+        <Node id="sayfa2.xhtml" x="271" y="32" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="index.xhtml" x="278" y="32" zoom="true"/>
+        <Node id="sayfa2.xhtml" x="34" y="32" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="index.xhtml" x="28" y="131" zoom="true"/>
+        <Node id="sayfa2.xhtml" x="315" y="133" zoom="true"/>
+    </Scope>
+</Scene>

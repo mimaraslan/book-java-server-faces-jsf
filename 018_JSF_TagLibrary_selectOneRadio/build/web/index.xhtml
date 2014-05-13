@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>JSF Html Tag h:selectOneRadio</title>
+    </h:head>
+    <h:body>
+        <title>JSF Html Tag h:selectOneRadio</title>
+
+        <h:form>
+            1. h:selectOneRadio içindekileri kendimiz elimiz ile doldurduk. 
+            <h:selectOneRadio value="#{yb.programlamadili}">
+
+                <f:selectItem itemValue="Java" itemLabel="JSF ile WEB" />
+                <f:selectItem itemValue="C#" itemLabel="C# ile WEB" />
+                <f:selectItem itemValue="PHP" itemLabel="PHP ile WEB" />
+                <f:selectItem itemValue="Python" itemLabel="PYTHON ile WEB"/>
+            </h:selectOneRadio>
+            <br />
+
+            2. h:selectOneRadio içini Map Haritalama ile doldurduk.
+            <h:selectOneRadio value="#{yb.ders}">
+                <f:selectItems value="#{yb.dersAdlariniAl()}" />
+            </h:selectOneRadio>
+            <br />
+
+            3. h:selectOneRadio içini bir sınıf ve nesne ile doldurduk.
+            <h:selectOneRadio value="#{yb.egitmen}">
+                <f:selectItems value="#{yb.egitmenBilgileriniAl}" 
+                               var="e"
+                               itemLabel="#{e.egitmenAdi}" 
+                               itemValue="#{e.egitmenNo}" />
+            </h:selectOneRadio>
+            <br />
+
+            <h:commandButton value="Temizle" type="reset" />
+            <h:commandButton value="Gönder" action="sayfa2" />
+
+        </h:form>
+    </h:body>
+</html>
