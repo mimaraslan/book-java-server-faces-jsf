@@ -95,6 +95,7 @@ PreparedStatement  preparedStatement = con.prepareStatement(eklemeSorgusu);
    public void veriDuzenle(String personeladi, String personelsoyadi,
                            String personeleposta, String personelgorevi, 
                            String personelmaasi, String personelid) {
+        veritabaninaBaglantiKur();
         String durumbilgisi = "";
         try {
             String duzenlemeSorgusu = "UPDATE personel "
@@ -127,6 +128,7 @@ PreparedStatement preparedStatement = con.prepareStatement(duzenlemeSorgusu);
 //---------------------------------------------	
    
  public void veriSil(int personelid) {
+     veritabaninaBaglantiKur();
     String durumbilgisi = "";
     try {      
       String silmeSorgusu = "DELETE FROM personel WHERE personelid = ?";   
