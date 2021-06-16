@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <faces-config
+      xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+      version="2.2">
+      
+          <managed-bean>
+        <description>Açıklama cümlelerimiz buraya gelecek.
+            Buraya açıklama yazmak isteğe bağlıdır.
+        </description>
+        <managed-bean-name>yonetimliBean</managed-bean-name>
+        <managed-bean-class>com.mimaraslan.YonetimliBean</managed-bean-class>
+    
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <description>Bu yönetimli kahve çekirdeği nesnesinin 
+            kapsam aralığı session(oturum)dur. 
+            Bu tipteki nesneler sayfalar arasında 
+            kolayca kullanılarak yönetilirler
+        </description>
+        <managed-bean-name>yonetimliBean2</managed-bean-name>
+        <managed-bean-class>com.mimaraslan.YonetimliBean2</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+
+</faces-config>

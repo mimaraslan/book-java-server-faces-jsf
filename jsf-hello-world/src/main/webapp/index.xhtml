@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>form-commandButton-commandLink</title>
+</h:head>
+<h:body>
+    <f:view>
+        WELCOME TO THE INDEX PAGE.
+        (ANA SAYFASINA HOŞGELDİNİZ.)
+        <h:form id="form1">
+            commandButton
+            <h:commandButton id="gonderDugmesi" value="Düğme ile geri git"
+                             action="001_UICommand_Bilesenleri.xhtml"/>
+            <br/>
+            commandLink
+            <h:commandLink id="gonderLinki" action="001_UICommand_Bilesenleri.xhtml">
+                <h:outputText value="Bağlantı ile geri git"/>
+            </h:commandLink>
+        </h:form>
+    </f:view>
+</h:body>
+</html>
+
